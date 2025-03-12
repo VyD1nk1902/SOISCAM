@@ -66,6 +66,7 @@ body {
 
 .header__nav-link.active {
   color: var(--textColor);
+  font-weight: 600;
 }
 
 .header__nav-link:hover {
