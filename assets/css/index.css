@@ -66,15 +66,6 @@
   text-align: center;
 }
 
-.alert-scam__title {
-  font-size: 30px;
-  font-weight: 800;
-  color: transparent;
-  background: var(--gradientColor);
-  background-clip: text;
-  -webkit-background-clip: text;
-}
-
 .alert-scam__desc {
   color: var(--subTextColor);
   margin-top: 8px;
