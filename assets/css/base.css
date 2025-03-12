@@ -45,4 +45,19 @@ body {
   gap: 40px;
 }
 
+.header__nav-link {
+  color: var(--subTextColor);
+  font-weight: 500;
+  transition: ease 0.2s;
+}
+
+.header__nav-link.active {
+  color: var(--textColor);
+}
+
+.header__nav-link:hover {
+  color: var(--textColor);
+  font-weight: 600;
+}
+
 /* end Header Style */
