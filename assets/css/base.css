@@ -27,4 +27,22 @@ body {
   align-items: center;
 }
 
+.header__logo {
+  display: flex;
+  align-items: end;
+  gap: 6px;
+}
+
+.header__logo-name {
+  color: var(--textColor);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
 /* end Header Style */
