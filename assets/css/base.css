@@ -15,6 +15,17 @@ body {
   font-size: 16px;
 }
 
+/* Button Style */
+.btn {
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: var(--gradientColor);
+  color: var(--textBtnColor);
+  font-weight: 500;
+  font-size: 16px;
+}
+/* end Button Style */
+
 /* Header Style */
 .header {
   margin-top: 25px;
