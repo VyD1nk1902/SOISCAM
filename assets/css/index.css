@@ -144,9 +144,9 @@
   backdrop-filter: blur(70px);
 }
 
-.warning__item.active .warning__content {
-  display: block;
-}
+/* .warning__item.active .warning__content {
+  display: block; *
+} */
 
 .warning__header {
   display: flex;
@@ -154,6 +154,12 @@
   cursor: pointer;
   gap: 8px;
 }
+
+.warning__header > * {
+  pointer-events: none;
+}
+
+/* ngăn chặn các sự kiện bên trong warning header (phần tử con) */
 
 .warning__item-title {
   font-weight: 600;
@@ -169,6 +175,6 @@
   margin-top: 8px;
   margin-left: 32px;
   color: var(--subTextColor);
-  display: none;
+  /* display: none; * */
 }
 /* end Warning */
