@@ -172,9 +172,24 @@
 }
 
 .warning__content {
-  margin-top: 8px;
   margin-left: 32px;
   color: var(--subTextColor);
   /* display: none; * */
+  height: 0;
+  overflow: hidden;
+  transition: ease 0.2s;
 }
+
+.warning__content.active {
+  margin-top: 8px;
+  height: auto;
+}
+/* khi được active sẽ show ra warning content */
+
+.warning__header-icon.active {
+  transform: rotate(90deg);
+  transition: transform ease 0.2s;
+}
+/* khi active sẽ lật icon */
+
 /* end Warning */
