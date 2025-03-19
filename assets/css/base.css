@@ -56,6 +56,15 @@ body {
   justify-content: space-between;
   padding: 16px 40px;
   align-items: center;
+  backdrop-filter: blur(70px);
+}
+
+.header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
 }
 
 .header__logo {
