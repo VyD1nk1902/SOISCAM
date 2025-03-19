@@ -124,7 +124,6 @@ function handleShowDropdown(e) {
     warningContent.style.height = 0;
   } //nếu không phải warningContent được click(active) thì ẩn
 }
-//Handle Dropdown Warning
 
 //Handle Show Modal
 // Lắng nghe sự kiện click trên các phần tử trong scammerItems
