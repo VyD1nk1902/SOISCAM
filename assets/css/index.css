@@ -57,6 +57,10 @@
   gap: 24px;
 }
 
+.form-search__custom {
+  margin-top: 60px;
+}
+
 .form-search__input {
   flex: 1;
   background-color: transparent;
@@ -78,6 +82,10 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: var(--bgColor4);
   padding-bottom: 20px;
+}
+
+.alert-scam__custom {
+  margin-top: 60px;
 }
 
 .alert-scam__header {
