@@ -106,6 +106,17 @@ body {
   justify-content: center;
   align-items: center;
   isolation: isolate;
+  z-index: 9999;
+  animation: fadeIn ease 0.25s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .modal__overlay {
@@ -116,6 +127,7 @@ body {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: -1;
+  cursor: pointer;
 }
 /* hiệu ứng nền phủ */
 
@@ -125,6 +137,18 @@ body {
   background-color: var(--bgColor2);
   border-radius: 16px;
   backdrop-filter: blur(70px);
+  animation: fadeDown ease 0.25s;
+}
+
+@keyframes fadeDown {
+  from {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  to {
+    translatey: (0%);
+    opacity: 1;
+  }
 }
 
 .modal__header {
@@ -150,6 +174,10 @@ body {
   align-items: center;
   cursor: pointer;
   transition: ease 0.2s;
+}
+
+.modal__header-close > * {
+  pointer-events: none;
 }
 
 .modal__header-close:hover {

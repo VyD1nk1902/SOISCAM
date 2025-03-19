@@ -125,3 +125,28 @@ function handleShowDropdown(e) {
   } //nếu không phải warningContent được click(active) thì ẩn
 }
 //Handle Dropdown Warning
+
+//Handle Show Modal
+// Lắng nghe sự kiện click trên các phần tử trong scammerItems
+scammerItems.forEach((item) => item.addEventListener("click", handleShowModal));
+
+// Hàm thêm trang modal vào đầu trang (trong body) và tự ẩn scrollbar
+function handleShowModal() {
+  document.body.insertAdjacentHTML("afterbegin", ModalHTML);
+  document.body.style.overflow = "hidden";
+}
+
+// Lắng nghe sự kiện click để đóng modal
+document.body.addEventListener("click", (e) => {
+  const modal = document.querySelector(".modal");
+  // Đóng modal khi nhấp vào .modal__header-close hoặc .modal__overlay
+  if (e.target.matches(".modal__header-close") || e.target.matches(".modal__overlay")) {
+    modal.remove();
+    document.body.style.overflow = "auto";
+    // } else if (e.target.matches(".modal__overlay")) {
+    //   modal.remove();.
+    //   document.body.style.overflow = "auto";
+  }
+});
+
+//end Handle Show Modal
