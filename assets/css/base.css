@@ -24,6 +24,33 @@ body {
   padding-bottom: 100px;
 }
 
+/* Effect Circle Styles */
+.effect-circle-1 {
+  width: 530px;
+  height: 530px;
+  border-radius: 100%;
+  filter: blur(250px);
+  background: rgba(27, 29, 48, 1);
+  position: fixed;
+  top: 4px;
+  left: -57px;
+  z-index: -1;
+  opacity: 0.6;
+}
+.effect-circle-2 {
+  width: 530px;
+  height: 530px;
+  border-radius: 100%;
+  filter: blur(250px);
+  background: rgba(27, 29, 48, 1);
+  position: fixed;
+  bottom: 4px;
+  right: -57px;
+  z-index: -1;
+  opacity: 0.6;
+}
+/* end Effect Circle Styles */
+
 /* Button Style */
 .btn {
   padding: 12px 20px;
