@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets//css/base.css" />
+    <link rel="stylesheet" href="./assets/css/report.css" />
   </head>
   <body>
     <!-- IMAGE FIXED -->
@@ -52,13 +53,70 @@
         alt="breadcrumb-icon"
         class="breadcrumb__icon"
       />
-      <a href="report.html" class="breadcrumb__link">Gửi tố cáo</a>
+      <a href="report.html" class="breadcrumb__link active">Gửi tố cáo</a>
     </section>
     <!-- end BREADCRUMB -->
 
+    <!-- FORM REPORT -->
+    <form class="form-report">
+      <h2 class="form__heading">Thông tin kẻ lừa đảo</h2>
+      <div class="form__group-wrap">
+        <div class="form__group">
+          <label for="nameScammer" class="form__title">Tên chủ tài khoản <span>*</span></label>
+          <input
+            type="text"
+            placeholder="Nhập tên chủ tài khoản..."
+            name="nameScammer"
+            id="nameScammer"
+            class="form__input"
+          />
+        </div>
+        <div class="form__group">
+          <label for="phoneScammer" class="form__title">Số điện thoại <span>*</span></label>
+          <input
+            type="text"
+            placeholder="Nhập số điện thoại..."
+            name="phoneScammer"
+            id="phoneScammer"
+            class="form__input"
+          />
+        </div>
+      </div>
+      <div class="form__group-wrap">
+        <div class="form__group">
+          <label for="bankNumber" class="form__title">Số tài khoản <span>*</span></label>
+          <input
+            type="text"
+            placeholder="Nhập số tài khoản..."
+            name="bankNumber"
+            id="bankNumber"
+            class="form__input"
+          />
+        </div>
+        <div class="form__group">
+          <label for="bankName" class="form__title">Ngân hàng <span>*</span></label>
+          <input
+            type="text"
+            placeholder="Nhập tên ngân hàng..."
+            name="bankName"
+            id="bankName"
+            class="form__input"
+          />
+        </div>
+      </div>
+      <div class="form__group">
+        <textarea
+          name="contentReport"
+          placeholder="Nhập nội dung tố cáo..."
+          id="contentReport"
+          class="form__textarea"
+        ></textarea>
+      </div>
+    </form>
+    <!-- end FORM REPORT -->
+
     <!-- JS -->
     <script src="./assets/js/app.js"></script>
-    <script src="./assets/js/index.js"></script>
     <!-- end JS -->
   </body>
 </html>
