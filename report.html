@@ -112,6 +112,80 @@
           class="form__textarea"
         ></textarea>
       </div>
+      <div class="form__upload-wrap">
+        <div class="form__image-preview">
+          <div class="form__preview-remove">
+            <img src="./assets/images/icon/close-icon.svg" alt="delete-icon" />
+          </div>
+          <img src="./assets/images/pictures/hacker.png" alt="preview" class="form__preview-img" />
+        </div>
+        <div class="form__upload-group">
+          <label for="uploadImages" class="form__upload">
+            <input
+              type="file"
+              name="images"
+              id="uploadImages"
+              class="form__upload-input"
+              accept="image/*"
+              multiple
+              hidden
+            />
+            <img
+              src="./assets/images/icon/Image-icon.svg"
+              alt="upload-icon"
+              class="form__upload-icon"
+            />
+            <span class="form__upload-text">Chọn ảnh</span>
+          </label>
+        </div>
+      </div>
+      <h2 class="form__heading">Xác thực người gửi tố cáo</h2>
+      <div class="form__group-wrap">
+        <div class="form__group">
+          <label for="nameSender" class="form__title">Họ và tên <span>*</span></label>
+          <input
+            type="text"
+            placeholder="Nhập họ và tên..."
+            name="nameSender"
+            id="nameSender"
+            class="form__input"
+          />
+        </div>
+        <div class="form__group">
+          <label for="phoneSender" class="form__title">Liên hệ (Zalo - Sđt) <span>*</span></label>
+          <input
+            type="text"
+            placeholder="Nhập số điện thoại..."
+            name="phoneSender"
+            id="phoneSender"
+            class="form__input"
+          />
+        </div>
+      </div>
+      <div class="form__action-group">
+        <div class="form__action-item">
+          <input
+            type="radio"
+            name="option"
+            id="option-1"
+            value="Tôi là nạn nhân"
+            class="form__radio-input"
+            checked
+          />
+          <label for="option-1" class="form__title-radio">Tôi là nạn nhân</label>
+        </div>
+        <div class="form__action-item">
+          <input
+            type="radio"
+            name="option"
+            id="option-2"
+            value="Tôi chỉ đăng hộ"
+            class="form__radio-input"
+          />
+          <label for="option-2" class="form__title-radio">Tôi chỉ đăng hộ</label>
+        </div>
+      </div>
+      <button type="submit" class="btn form-report__btn">Gửi tố cáo</button>
     </form>
     <!-- end FORM REPORT -->
 
