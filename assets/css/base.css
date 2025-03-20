@@ -114,7 +114,7 @@ body {
 
 .header__logo {
   display: flex;
-  align-items: end;
+  align-items: center;
   gap: 6px;
 }
 
