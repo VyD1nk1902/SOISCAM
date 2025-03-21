@@ -144,6 +144,10 @@
   right: 4px;
 }
 
+.form__preview-remove > * {
+  pointer-events: none;
+}
+
 .form__action-group {
   display: flex;
   align-items: center;
