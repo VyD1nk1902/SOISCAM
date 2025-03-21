@@ -58,7 +58,7 @@
     <!-- end BREADCRUMB -->
 
     <!-- FORM REPORT -->
-    <form class="form-report">
+    <form id="form-report" class="form-report">
       <h2 class="form__heading">Thông tin kẻ lừa đảo</h2>
       <div class="form__group-wrap">
         <div class="form__group">
@@ -70,6 +70,7 @@
             id="nameScammer"
             class="form__input"
           />
+          <p class="form-message"></p>
         </div>
         <div class="form__group">
           <label for="phoneScammer" class="form__title">Số điện thoại <span>*</span></label>
@@ -80,6 +81,7 @@
             id="phoneScammer"
             class="form__input"
           />
+          <p class="form-message"></p>
         </div>
       </div>
       <div class="form__group-wrap">
@@ -92,6 +94,7 @@
             id="bankNumber"
             class="form__input"
           />
+          <p class="form-message"></p>
         </div>
         <div class="form__group">
           <label for="bankName" class="form__title">Ngân hàng <span>*</span></label>
@@ -102,24 +105,26 @@
             id="bankName"
             class="form__input"
           />
+          <p class="form-message"></p>
         </div>
       </div>
-      <div class="form__group">
+      <div class="form__group form__group-textarea">
         <textarea
           name="contentReport"
           placeholder="Nhập nội dung tố cáo..."
           id="contentReport"
           class="form__textarea"
         ></textarea>
+        <p class="form-message"></p>
       </div>
       <div class="form__upload-wrap">
-        <div class="form__image-preview">
+        <!-- <div class="form__image-preview">
           <div class="form__preview-remove">
             <img src="./assets/images/icon/close-icon.svg" alt="delete-icon" />
           </div>
           <img src="./assets/images/pictures/hacker.png" alt="preview" class="form__preview-img" />
-        </div>
-        <div class="form__upload-group">
+        </div> -->
+        <div class="form__group form__upload-group">
           <label for="uploadImages" class="form__upload">
             <input
               type="file"
@@ -137,6 +142,7 @@
             />
             <span class="form__upload-text">Chọn ảnh</span>
           </label>
+          <p class="form-message"></p>
         </div>
       </div>
       <h2 class="form__heading">Xác thực người gửi tố cáo</h2>
@@ -150,6 +156,7 @@
             id="nameSender"
             class="form__input"
           />
+          <p class="form-message"></p>
         </div>
         <div class="form__group">
           <label for="phoneSender" class="form__title">Liên hệ (Zalo - Sđt) <span>*</span></label>
@@ -160,6 +167,7 @@
             id="phoneSender"
             class="form__input"
           />
+          <p class="form-message"></p>
         </div>
       </div>
       <div class="form__action-group">
@@ -190,7 +198,9 @@
     <!-- end FORM REPORT -->
 
     <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/gh/tuanduong1907/fui-validate@main/fui-validate.js"></script>
     <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/validation.js"></script>
     <!-- end JS -->
   </body>
 </html>
