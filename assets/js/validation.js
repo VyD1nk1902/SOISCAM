@@ -1,16 +1,40 @@
 // VARIABLES
+const apiKey = "314724b374fc04be181b9d3398e6dd88";
+const endpoint = "https://67e0000c7635238f9aac34d6.mockapi.io/scammers";
 const uploadImageInput = document.getElementById("uploadImages");
 const form__uploadwrap = document.querySelector(".form__upload-wrap");
 let arrayImage = [];
 
+// HANDLE UPLOAD IMGBB
+
+async function uploadImgBB(file) {
+  const formData = new FormData();
+  // Thêm file hình ảnh vào FormData để gửi lên server
+  formData.append("image", file);
+
+  try {
+    // Gửi yêu cầu POST đến API ImgBB với đường dẫn endpoint và apiKey bằng axios
+    const response = await axios.post(`https://api.imgbb.com/1/upload?key=${apiKey}`, formData);
+
+    // Trả về URL của hình ảnh sau khi tải lên thành công
+    return response.data.data.url;
+  } catch (error) {
+    // Bắt lỗi nếu có vấn đề xảy ra trong quá trình tải lên
+    console.log(error);
+    return null; // Trả về null nếu gặp lỗi
+  }
+}
+
+// end HANDLE UPLOAD IMGBB
+
 //HANDLE UPLOAD IMG
 uploadImageInput.addEventListener("change", handleUploadImage);
 
-function handleUploadImage(e) {
+async function handleUploadImage(e) {
   const imageList = [...e.target.files];
-  imageList.forEach((item) => {
-    const urlImg = URL.createObjectURL(item);
-    // Cho phép tạo đường dẫn local ảnh trên máy tính
+  imageList.forEach(async (item) => {
+    const urlImg = await uploadImgBB(item);
+    // Cho phép upload ảnh trên máy tính lên host server ImgBB
     const imgHTML = `<div class="form__image-preview">
           <div class="form__preview-remove" data-url="${urlImg}">
             <img src="./assets/images/icon/close-icon.svg" alt="delete-icon" />
@@ -30,6 +54,7 @@ form__uploadwrap.addEventListener("click", (e) => {
     console.log(arrayImage);
   }
 });
+//end HANDLE UPLOAD IMG
 
 // VALIDATION
 Validator({
@@ -54,8 +79,21 @@ Validator({
     // Validator.isRequired("#phoneSender", "Vui lòng nhập số điện thoại của người tố cáo"),
     // Validator.isPhoneNumber("#phoneSender"),
   ],
-  onSubmit: function ({ images, ...rest }) {
+  onSubmit: async function ({ images, ...rest }) {
     console.log({ images: arrayImage, ...rest }); // Dữ liệu form sau khi xác thực thành công
+    try {
+      axios.post(endpoint, {
+        images: arrayImage,
+        ...rest,
+      });
+      const formImagePreviews = document.querySelectorAll(".form__image-preview");
+      formImagePreviews.forEach((item) => item.remove());
+      FuiToast.success("Gửi đơn thành công.");
+    } catch (error) {
+      console.log(error);
+      FuiToast.error("Gửi đơn thất bại.");
+    }
   },
   resetOnSubmit: true,
 });
+// end VALIDATION
