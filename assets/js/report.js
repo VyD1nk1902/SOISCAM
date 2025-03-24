@@ -5,10 +5,14 @@ const uploadImageInput = document.getElementById("uploadImages");
 const form__uploadwrap = document.querySelector(".form__upload-wrap");
 let arrayImage = [];
 const phoneScammerInput = document.getElementById("phoneScammer");
+const bankNumberInput = document.getElementById("bankNumber");
+const phoneSenderInput = document.getElementById("phoneSender");
 // end VARIABLES
 
 //HANDLE INPUT ONLY NUMBER
 phoneScammerInput.addEventListener("keypress", handleInputOnlyNumber);
+bankNumberInput.addEventListener("keypress", handleInputOnlyNumber);
+phoneSenderInput.addEventListener("keypress", handleInputOnlyNumber);
 
 function handleInputOnlyNumber(e) {
   if (e.charCode < 48 || e.charCode > 57) {
