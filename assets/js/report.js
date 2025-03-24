@@ -4,6 +4,18 @@ const endpoint = "https://67e0000c7635238f9aac34d6.mockapi.io/scammers";
 const uploadImageInput = document.getElementById("uploadImages");
 const form__uploadwrap = document.querySelector(".form__upload-wrap");
 let arrayImage = [];
+const phoneScammerInput = document.getElementById("phoneScammer");
+// end VARIABLES
+
+//HANDLE INPUT ONLY NUMBER
+phoneScammerInput.addEventListener("keypress", handleInputOnlyNumber);
+
+function handleInputOnlyNumber(e) {
+  if (e.charCode < 48 || e.charCode > 57) {
+    e.preventDefault();
+  }
+}
+// end HANDLE INPUT ONLY NUMBER
 
 // HANDLE UPLOAD IMGBB
 
