@@ -110,6 +110,7 @@ Validator({
     try {
       axios.post(endpoint, {
         images: arrayImage,
+        date: new Date(),
         ...rest,
       });
       FuiToast.success("Gửi đơn thành công.");
