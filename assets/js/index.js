@@ -90,8 +90,32 @@ const ModalHTML = `
 const warningHeader = document.querySelectorAll(".warning__header");
 // tạo biến trỏ tới .warning__header
 const scammerItems = document.querySelectorAll(".scammers__item");
+const endpoint = "https://67e0000c7635238f9aac34d6.mockapi.io/scammers";
+const scammerList = document.querySelector(".scammers__list");
+const today = document.querySelector(".today");
+const alertScamDesc = document.querySelector(".alert-scam__desc");
 
-//Handle Dropdown Warning
+//HANDLE FORMAT DATE
+function formatDate(dateString) {
+  const date = dateString ? new Date(dateString) : new Date();
+
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+
+  const formatDate = day < 10 ? `0${day}` : `${day}`;
+  const formatMonth = month < 10 ? `0${month}` : `${month}`;
+  return `${formatDate}/${formatMonth}/${year}`;
+}
+//end HANDLE FORMAT DATE
+
+// GENERATE CURRUNT DAY ON TITLE
+if (today) {
+  today.textContent = `Hôm nay ${formatDate()}`;
+}
+//end GENERATE CURRUNT DAY ON TITLE
+
+//HANDLE DROPDOWN WARNING
 warningHeader.forEach((item) => item.addEventListener("click", handleShowDropdown)); //truyền thao tác click -> function dropdown
 
 function handleShowDropdown(e) {
@@ -124,8 +148,9 @@ function handleShowDropdown(e) {
     warningContent.style.height = 0;
   } //nếu không phải warningContent được click(active) thì ẩn
 }
+// end HANDLE DROPDOWN WARNING
 
-//Handle Show Modal
+//HANDLE SHOW MODAL
 // Lắng nghe sự kiện click trên các phần tử trong scammerItems
 scammerItems.forEach((item) => item.addEventListener("click", handleShowModal));
 
@@ -148,4 +173,47 @@ document.body.addEventListener("click", (e) => {
   }
 });
 
-//end Handle Show Modal
+//end HANDLE SHOW MODAL
+
+//HANDLE RENDER SCAMMER
+function renderScammerToday(data) {
+  const todayDate = new Date();
+  todayDate.setHours(0, 0, 0, 0);
+  const todayData = data.filter((item) => {
+    const itemDate = new Date(item.date);
+    itemDate.setHours(0, 0, 0, 0);
+    return itemDate.getTime() === todayDate.getTime();
+  });
+
+  alertScamDesc.textContent = `CÓ ${todayData.length} CẢNH BÁO`;
+  if (todayData && todayData.length > 0) {
+    todayData.forEach((item) => {
+      const scammerItemHTML = `
+      <li class="scammers__item">
+      <img src="./assets/images/Avatars/avatar-1.png" alt="avatar" class="scammer__avatar" />
+            <div class="scammer__info">
+            <h3 class="scammer__name">${item.nameScammer}</h3>
+            <div class="scammer__date">${item.id} - ${formatDate(item.date)}</div>
+            </div>
+            </li>
+            `;
+      scammerList.insertAdjacentHTML("afterbegin", scammerItemHTML);
+    });
+  }
+}
+//end HANDLE RENDER SCAMMER
+
+//HANDLE GET SCAMMER
+async function getScammer() {
+  try {
+    const response = await axios.get(endpoint);
+    const data = await response.data;
+    renderScammerToday(data);
+
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+getScammer();
+//end  HANDLE GET SCAMMER
