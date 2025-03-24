@@ -28,7 +28,7 @@
   max-width: 830px;
   margin-inline: auto;
   margin-top: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
 }
 
 .form__heading {
@@ -84,15 +84,16 @@
 }
 
 .form__upload-wrap {
-  display: inline-flex;
+  display: flex;
   gap: 12px;
   flex-wrap: wrap;
   margin-bottom: 40px;
 }
 
 .form__upload-group {
-  width: 128px;
+  max-width: 128px;
   height: 114px;
+  width: 100%;
   border-radius: 8px;
   background-color: var(--bgColor3);
   position: relative;
