@@ -89,7 +89,7 @@ const ModalHTML = `
 
 const warningHeader = document.querySelectorAll(".warning__header");
 // tạo biến trỏ tới .warning__header
-const scammerItems = document.querySelectorAll(".scammers__item");
+
 const endpoint = "https://67e0000c7635238f9aac34d6.mockapi.io/scammers";
 const scammerList = document.querySelector(".scammers__list");
 const today = document.querySelector(".today");
@@ -152,7 +152,7 @@ function handleShowDropdown(e) {
 
 //HANDLE SHOW MODAL
 // Lắng nghe sự kiện click trên các phần tử trong scammerItems
-scammerItems.forEach((item) => item.addEventListener("click", handleShowModal));
+// scammerItems.forEach((item) => item.addEventListener("click", handleShowModal));
 
 // Hàm thêm trang modal vào đầu trang (trong body) và tự ẩn scrollbar
 function handleShowModal() {
@@ -170,6 +170,8 @@ document.body.addEventListener("click", (e) => {
     // } else if (e.target.matches(".modal__overlay")) {
     //   modal.remove();.
     //   document.body.style.overflow = "auto";
+  } else if (e.target.matches(".scammers__item")) {
+    handleShowModal();
   }
 });
 
@@ -189,13 +191,13 @@ function renderScammerToday(data) {
   if (todayData && todayData.length > 0) {
     todayData.forEach((item) => {
       const scammerItemHTML = `
-      <li class="scammers__item">
+      <li class="scammers__item" data-id = "${item.id}" >
       <img src="./assets/images/Avatars/avatar-1.png" alt="avatar" class="scammer__avatar" />
-            <div class="scammer__info">
-            <h3 class="scammer__name">${item.nameScammer}</h3>
-            <div class="scammer__date">${item.id} - ${formatDate(item.date)}</div>
-            </div>
-            </li>
+      <div class="scammer__info">
+        <h3 class="scammer__name">${item.nameScammer}</h3>
+        <div class="scammer__date">${item.id} - ${formatDate(item.date)}</div>
+      </div>
+      </li> 
             `;
       scammerList.insertAdjacentHTML("afterbegin", scammerItemHTML);
     });
