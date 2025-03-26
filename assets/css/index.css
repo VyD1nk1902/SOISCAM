@@ -120,6 +120,10 @@
   overflow: hidden;
 }
 
+.scammers__item > * {
+  pointer-events: none;
+}
+
 .scammer__name {
   font-weight: 600;
 }
