@@ -71,7 +71,8 @@ function handleShowDropdown(e) {
 // Thêm id để so sánh xem modal nào để truyền dữ liệu modal đó vào chính xác
 function handleShowModal(id) {
   const scammer = scammerData.find((item) => item.id === id);
-  const ModalHTML = `
+  const imgListHTML = scammer.images.map((item) => `<img src="${item}" alt="image scammer" />`).join("");
+  const ModalHTML = ` 
 <section class="modal">
        <div class="modal__overlay"></div>
        <div class="modal__content">
@@ -88,21 +89,22 @@ function handleShowModal(id) {
                  <img src="./assets/images/Avatars/avatar-1.png" alt="avatar-scammer" />
                </div>
                <div class="modal__info">
-                 <h4 class="modal__info-name">Nguyễn Văn A</h4>
-                 <p class="modal__info-dsc">#50 - Tố vào ngày 12/02/2024</p>
+                 <h4 class="modal__info-name">${scammer.nameScammer}</h4>
+                 <p class="modal__info-dsc">${scammer.id} - 
+                 Tố vào ngày ${formatDate(scammer.date)}</p>
                </div>
              </div>
              <div class="modal__detail">
                <span class="modal__detail-title">Số điện thoại</span>
-               <span class="modal__detail-text">0333990859</span>
+               <span class="modal__detail-text">${scammer.phoneScammer}</span>
              </div>
              <div class="modal__detail">
                <span class="modal__detail-title">Số tài khoản</span>
-               <span class="modal__detail-text">342423443</span>
+               <span class="modal__detail-text">${scammer.bankNumber}</span>
              </div>
              <div class="modal__detail">
                <span class="modal__detail-title">Ngân hàng</span>
-               <span class="modal__detail-text">ACB</span>
+               <span class="modal__detail-text">${scammer.bankName}</span>
              </div>
            </div>
            <div class="modal__group">
@@ -111,45 +113,28 @@ function handleShowModal(id) {
                  <img src="./assets/images/Avatars/avatar-2.png" alt="avatar-scammer" />
                </div>
                <div class="modal__info">
-                 <h4 class="modal__info-name">Nguyễn Văn B</h4>
+                 <h4 class="modal__info-name">${scammer.nameSender}</h4>
                  <p class="modal__info-dsc">Người tố cáo</p>
                </div>
              </div>
              <div class="modal__detail">
                <span class="modal__detail-title">Trạng thái</span>
-               <span class="modal__detail-text">Nạn nhân</span>
+               <span class="modal__detail-text">${scammer.option}</span>
              </div>
              <div class="modal__detail">
                <span class="modal__detail-title">Liên hệ</span>
-               <span class="modal__detail-text">0356655665</span>
+               <span class="modal__detail-text">${scammer.phoneSender}</span>
              </div>
              <div class="modal__textarea">
                <span class="modal__detail-title">Nội dung tố cáo</span>
                <p class="modal__textarea-content">
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente asperiores,
-                 tenetur eius a, nemo incidunt necessitatibus sunt vitae voluptates molestias
-                 aliquid explicabo dolore quia possimus fugiat eveniet veniam inventore nisi.
+                 ${scammer.contentReport}
                </p>
              </div>
              <div class="modal__images">
                <span class="modal__detail-title">Hình ảnh liên quan</span>
                <div class="modal__preview-images">
-                 <img
-                   src="https://images.unsplash.com/photo-1726066012751-2adfb5485977?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                   alt="image scammer"
-                 />
-                 <img
-                   src="https://images.unsplash.com/photo-1726066012751-2adfb5485977?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                   alt="image scammer"
-                 />
-                 <img
-                   src="https://images.unsplash.com/photo-1726066012751-2adfb5485977?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                   alt="image scammer"
-                 />
-                 <img
-                   src="https://images.unsplash.com/photo-1726066012751-2adfb5485977?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                   alt="image scammer"
-                 />
+                 ${imgListHTML}
                </div>
              </div>
            </div>
