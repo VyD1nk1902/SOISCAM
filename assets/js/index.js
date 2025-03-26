@@ -198,7 +198,7 @@ function renderScammerToday(data) {
         <div class="scammer__date">${item.id} - ${formatDate(item.date)}</div>
       </div>
       </li> 
-            `;
+    `;
       scammerList.insertAdjacentHTML("afterbegin", scammerItemHTML);
     });
   }
