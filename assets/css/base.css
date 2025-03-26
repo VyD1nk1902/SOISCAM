@@ -349,3 +349,10 @@ body {
 }
 
 /* end Modal Style */
+
+/*Light Gallery */
+.lg-backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+}
+/*end Light Gallery */

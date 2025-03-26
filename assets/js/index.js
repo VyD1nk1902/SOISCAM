@@ -71,9 +71,17 @@ function handleShowDropdown(e) {
 // Thêm id để so sánh xem modal nào để truyền dữ liệu modal đó vào chính xác
 function handleShowModal(id) {
   const scammer = scammerData.find((item) => item.id === id);
-  const imgListHTML = scammer.images.map((item) => `<img src="${item}" alt="image scammer" />`).join("");
+  const imgListHTML = scammer.images
+    .map(
+      (item, index) => `
+  <a href="${item}">
+  <img src="${item}" alt="Ảnh bằng chứng scam ${scammer.nameScammer} ${index + 1}"   />
+  </a>
+`
+    )
+    .join("");
   const ModalHTML = ` 
-<section class="modal">
+  <section class="modal">
        <div class="modal__overlay"></div>
        <div class="modal__content">
          <div class="modal__header">
@@ -141,11 +149,14 @@ function handleShowModal(id) {
          </div>
        </div>
      </section>
-`;
+  `;
 
   console.log(scammer);
   document.body.insertAdjacentHTML("afterbegin", ModalHTML);
   document.body.style.overflow = "hidden";
+  lightGallery(document.querySelector(".modal__preview-images"), {
+    plugins: [lgThumbnail],
+  });
 }
 
 // Lắng nghe sự kiện click để đóng modal
