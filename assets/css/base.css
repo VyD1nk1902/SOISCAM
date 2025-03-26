@@ -184,7 +184,7 @@ body {
   justify-content: center;
   align-items: center;
   isolation: isolate;
-  z-index: 9999;
+  z-index: 50;
   animation: fadeIn ease 0.25s;
 }
 
