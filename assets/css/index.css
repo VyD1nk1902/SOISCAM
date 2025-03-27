@@ -99,8 +99,11 @@
   margin-top: 8px;
 }
 
-.scammers__list {
+.scammers__list-wrap {
   padding: 50px 30px;
+}
+
+.scammers__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;

@@ -7,6 +7,7 @@ const today = document.querySelector(".today");
 const alertScamDesc = document.querySelector(".alert-scam__desc");
 const scammerListAll = document.getElementById("scammerListAll");
 const scammerListWrap = document.querySelector(".scammers__list-wrap");
+const loading = document.querySelector(".loading");
 let scammerData = [];
 //end Variables
 
@@ -237,28 +238,33 @@ function renderScammerAll(data) {
 
 //HANDLE GET SCAMMER
 async function getScammer() {
-  try {
-    const response = await axios.get(endpoint);
-    scammerData = await response.data;
-    // Lấy dữ liệu database lưu vô biến scammerData để sử dụng cho hàm khác
-    if (scammerListAll) {
-      renderScammerAll(scammerData);
-    } else {
-      renderScammerToday(scammerData);
-    }
-    //scammerListAll chỉ có trong trang scammers.html dựa vào đó sẽ render ra hàm tương ứng.
+  loading.classList.add("active");
+  setTimeout(async () => {
+    try {
+      loading.classList.remove("active");
+      const response = await axios.get(endpoint);
+      scammerData = await response.data;
+      // Lấy dữ liệu database lưu vô biến scammerData để sử dụng cho hàm khác
+      if (scammerListAll) {
+        renderScammerAll(scammerData);
+      } else {
+        renderScammerToday(scammerData);
+      }
+      //scammerListAll chỉ có trong trang scammers.html dựa vào đó sẽ render ra hàm tương ứng.
 
-    console.log(response.data);
-  } catch (error) {
-    console.error(error);
-    scammerListWrap.innerHTML = `
-    <div class="not-found">
-      <img src="./assets/images/logo/not-found.svg" alt="not-found" />
-      <span>Dữ liệu bị lỗi</span>
-      <span>Truy cập bị gián đoạn, vui lòng thử lại sau.</span>
-    </div>
-    `;
-  }
+      console.log(response.data);
+    } catch (error) {
+      loading.classList.remove("active");
+      console.error(error);
+      scammerListWrap.innerHTML = `
+      <div class="not-found">
+        <img src="./assets/images/logo/not-found.svg" alt="not-found" />
+        <span>Dữ liệu bị lỗi</span>
+        <span>Truy cập bị gián đoạn, vui lòng thử lại sau.</span>
+      </div>
+      `;
+    }
+  }, 2000);
 }
 getScammer();
 //end  HANDLE GET SCAMMER
