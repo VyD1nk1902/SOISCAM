@@ -10,6 +10,20 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/css/lightgallery.min.css"
+      integrity="sha512-QMCloGTsG2vNSnHcsxYTapI6pFQNnUP6yNizuLL5Wh3ha6AraI6HrJ3ABBaw6SIUHqlSTPQDs/SydiR98oTeaQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/css/lg-thumbnail.min.css"
+      integrity="sha512-rKuOh3xlF/027KUPuMok0ESsZ2zWPRzkniD3n5zZKCAtbiVkYw66DR4KtVAGf8dLPLr5DdyQs05BlSmEyXctkQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/base.css" />
     <link rel="stylesheet" href="./assets/css/index.css" />
@@ -23,11 +37,7 @@
     <!-- HEADER -->
     <header class="header">
       <a href="index.html" class="header__logo">
-        <img
-          src="./assets/images/logo/logo-soiscam-2.svg"
-          alt="Logo-Soiscam"
-          class="header__logo-img"
-        />
+        <img src="./assets/images/logo/logo-soiscam-2.svg" alt="Logo-Soiscam" class="header__logo-img" />
         <span class="header__logo-name">Soi scam</span>
       </a>
       <ul class="header__nav-list">
@@ -47,11 +57,7 @@
 
     <!-- FORM SEARCH -->
     <form class="form-search form-search__custom">
-      <input
-        type="text"
-        class="form-search__input"
-        placeholder="Kiểm tra số tài khoản ngân hàng..."
-      />
+      <input type="text" class="form-search__input" placeholder="Kiểm tra số tài khoản ngân hàng..." />
       <button type="submit" class="btn form-search__button">Tìm kiếm</button>
     </form>
     <!-- end FORM SEARCH -->
@@ -61,57 +67,29 @@
       <section class="alert-scam alert-scam__custom">
         <div class="alert-scam__header">
           <h2 class="alert-scam__title title">Danh sách scam</h2>
-          <p class="alert-scam__desc">CÓ 26 CẢNH BÁO</p>
+          <p class="alert-scam__desc">CÓ ... CẢNH BÁO</p>
         </div>
-        <ul class="scammers__list">
-          <li class="scammers__item">
-            <img src="./assets/images/Avatars/avatar-1.png" alt="avatar" class="scammer__avatar" />
-            <div class="scammer__info">
-              <h3 class="scammer__name">Phan Xuan Tan</h3>
-              <div class="scammer__date">#50 - 12/02/2024</div>
-            </div>
-          </li>
-          <li class="scammers__item">
-            <img src="./assets/images/Avatars/avatar-1.png" alt="avatar" class="scammer__avatar" />
-            <div class="scammer__info">
-              <h3 class="scammer__name">Phan Xuan Tan</h3>
-              <div class="scammer__date">#50 - 12/02/2024</div>
-            </div>
-          </li>
-          <li class="scammers__item">
-            <img src="./assets/images/Avatars/avatar-1.png" alt="avatar" class="scammer__avatar" />
-            <div class="scammer__info">
-              <h3 class="scammer__name">Phan Xuan Tan</h3>
-              <div class="scammer__date">#50 - 12/02/2024</div>
-            </div>
-          </li>
-          <li class="scammers__item">
-            <img src="./assets/images/Avatars/avatar-1.png" alt="avatar" class="scammer__avatar" />
-            <div class="scammer__info">
-              <h3 class="scammer__name">Phan Xuan Tan</h3>
-              <div class="scammer__date">#50 - 12/02/2024</div>
-            </div>
-          </li>
-          <li class="scammers__item">
-            <img src="./assets/images/Avatars/avatar-1.png" alt="avatar" class="scammer__avatar" />
-            <div class="scammer__info">
-              <h3 class="scammer__name">Phan Xuan Tan</h3>
-              <div class="scammer__date">#50 - 12/02/2024</div>
-            </div>
-          </li>
-          <li class="scammers__item">
-            <img src="./assets/images/Avatars/avatar-1.png" alt="avatar" class="scammer__avatar" />
-            <div class="scammer__info">
-              <h3 class="scammer__name">Phan Xuan Tan</h3>
-              <div class="scammer__date">#50 - 12/02/2024</div>
-            </div>
-          </li>
-        </ul>
+        <ul id="scammerListAll" class="scammers__list"></ul>
       </section>
       <!-- end SCAMMERS -->
     </div>
 
     <!-- JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/lightgallery.min.js"
+      integrity="sha512-n02TbYimj64qb98ed5WwkNiSw/i9Xlvv4Ehvhg0jLp3qMAMWCYUHbOMbppZ0vimtyiyw9NqNqxUZC4hq86f4aQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/plugins/thumbnail/lg-thumbnail.min.js"
+      integrity="sha512-jZxB8WysJ6S6e4Hz5IZpAzR1WiflBl0hBxriHGlLkUN32T18+rD1aLNifa1KTll/zx8lIfWVP1NqEjHi/Khy5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Lightgallery ZoomPics -->
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <!-- API -->
     <script src="./assets/js/app.js"></script>
     <script src="./assets/js/index.js"></script>
     <!-- end JS -->

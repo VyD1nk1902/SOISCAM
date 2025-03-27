@@ -6,6 +6,7 @@ const scammerList = document.querySelector(".scammers__list");
 const today = document.querySelector(".today");
 const alertScamDesc = document.querySelector(".alert-scam__desc");
 let scammerData = [];
+const scammerListAll = document.getElementById("scammerListAll");
 //end Variables
 
 //HANDLE FORMAT DATE
@@ -176,7 +177,7 @@ document.body.addEventListener("click", (e) => {
 
 //end HANDLE SHOW MODAL
 
-//HANDLE RENDER SCAMMER
+//HANDLE RENDER SCAMMER TODAY
 function renderScammerToday(data) {
   const todayDate = new Date();
   todayDate.setHours(0, 0, 0, 0);
@@ -202,7 +203,29 @@ function renderScammerToday(data) {
     });
   }
 }
-//end HANDLE RENDER SCAMMER
+//end HANDLE RENDER SCAMMER TODAY
+
+//HANDLE RENDER SCAMMER ALL
+function renderScammerAll(data) {
+  const todayDate = new Date();
+
+  alertScamDesc.textContent = `CÓ ${data.length} CẢNH BÁO`;
+  if (data && data.length > 0) {
+    data.forEach((item) => {
+      const scammerItemHTML = `
+      <li class="scammers__item" data-id = "${item.id}" >
+      <img src="./assets/images/Avatars/avatar-1.png" alt="avatar" class="scammer__avatar" />
+      <div class="scammer__info">
+        <h3 class="scammer__name">${item.nameScammer}</h3>
+        <div class="scammer__date">${item.id} - ${formatDate(item.date)}</div>
+      </div>
+      </li> 
+    `;
+      scammerListAll.insertAdjacentHTML("afterbegin", scammerItemHTML);
+    });
+  }
+}
+//end HANDLE RENDER SCAMMER ALL
 
 //HANDLE GET SCAMMER
 async function getScammer() {
@@ -210,7 +233,13 @@ async function getScammer() {
     const response = await axios.get(endpoint);
     scammerData = await response.data;
     // Lấy dữ liệu database lưu vô biến scammerData để sử dụng cho hàm khác
-    renderScammerToday(scammerData);
+    if (scammerListAll) {
+      renderScammerAll(scammerData);
+    } else {
+      renderScammerToday(scammerData);
+    }
+    //scammerListAll chỉ có trong trang scammers.html dựa vào đó sẽ render ra hàm tương ứng.
+
     console.log(response.data);
   } catch (error) {
     console.error(error);
