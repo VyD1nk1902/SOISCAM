@@ -5,8 +5,9 @@ const endpoint = "https://67e0000c7635238f9aac34d6.mockapi.io/scammers";
 const scammerList = document.querySelector(".scammers__list");
 const today = document.querySelector(".today");
 const alertScamDesc = document.querySelector(".alert-scam__desc");
-let scammerData = [];
 const scammerListAll = document.getElementById("scammerListAll");
+const scammerListWrap = document.querySelector(".scammers__list-wrap");
+let scammerData = [];
 //end Variables
 
 //HANDLE FORMAT DATE
@@ -201,6 +202,13 @@ function renderScammerToday(data) {
     `;
       scammerList.insertAdjacentHTML("afterbegin", scammerItemHTML);
     });
+  } else {
+    scammerListWrap.innerHTML = `
+    <div class="not-found">
+      <img src="./assets/images/logo/not-found.svg" alt="not-found" />
+      <span>Hiện tại không có đơn nào</span>
+    </div>
+    `;
   }
 }
 //end HANDLE RENDER SCAMMER TODAY
@@ -243,6 +251,13 @@ async function getScammer() {
     console.log(response.data);
   } catch (error) {
     console.error(error);
+    scammerListWrap.innerHTML = `
+    <div class="not-found">
+      <img src="./assets/images/logo/not-found.svg" alt="not-found" />
+      <span>Dữ liệu bị lỗi</span>
+      <span>Truy cập bị gián đoạn, vui lòng thử lại sau.</span>
+    </div>
+    `;
   }
 }
 getScammer();

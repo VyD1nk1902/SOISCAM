@@ -356,3 +356,22 @@ body {
   backdrop-filter: blur(5px);
 }
 /*end Light Gallery */
+
+/* Not-Found Style */
+.not-found {
+  padding-block: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.not-found img {
+  height: 200px;
+  opacity: 0.5;
+}
+
+.not-found span {
+  text-align: center;
+  opacity: 0.5;
+}
+/*end Not-Found Style */
