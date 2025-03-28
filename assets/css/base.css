@@ -8,6 +8,7 @@
   --subTextColor: rgba(148, 163, 184, 1);
   --gradientColor: linear-gradient(270.33deg, #d9c4af -70.15%, #ffffff 97.57%);
   --textBtnColor: #090909;
+  --headerHeight: 82px;
 }
 
 body {
@@ -107,10 +108,12 @@ body {
   background-color: var(--bgColor2);
   border-radius: 16px;
   display: flex;
-  justify-content: space-between;
-  padding: 16px 40px;
+  justify-content: center;
   align-items: center;
+  padding: 16px 40px;
+  height: var(--headerHeight);
   backdrop-filter: blur(70px);
+  position: relative;
 }
 
 .header.fixed {
@@ -140,6 +143,8 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
+  position: absolute;
+  left: 40px;
 }
 
 .header__logo-name {
@@ -168,6 +173,11 @@ body {
 .header__nav-link:hover {
   color: var(--textColor);
   font-weight: 600;
+}
+
+.header__btn {
+  position: absolute;
+  right: 40px;
 }
 
 /* end Header Style */
