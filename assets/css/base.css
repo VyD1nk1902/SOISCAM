@@ -30,7 +30,7 @@ body {
   padding-bottom: 100px;
 }
 
-/* Error message styles */
+/* ERROR MESSAGE STYLES */
 .form-message {
   font-size: 14px;
   color: var(--redColor);
@@ -48,9 +48,9 @@ body {
   width: 100%;
   text-align: center;
 }
-/* end Error message styles */
+/* end ERROR MESSAGE STYLES */
 
-/* Effect Circle Styles */
+/* EFFECT CIRCLE STYLES */
 .effect-circle-1 {
   width: 530px;
   height: 530px;
@@ -75,9 +75,9 @@ body {
   z-index: -1;
   opacity: 0.6;
 }
-/* end Effect Circle Styles */
+/* end EFFECT CIRCLE STYLES */
 
-/* Button Style */
+/* BUTTON STYLES */
 .btn {
   padding: 12px 20px;
   border-radius: 12px;
@@ -88,9 +88,9 @@ body {
   border: none;
   outline: none;
 }
-/* end Button Style */
+/* end BUTTON STYLES */
 
-/* Title Style */
+/* TITLE STYLE */
 .title {
   font-size: 30px;
   font-weight: 800;
@@ -99,9 +99,9 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
 }
-/* end Title Style */
+/* end TITLE STYLE */
 
-/* Header Style */
+/* HEADER STYLES */
 .header {
   margin-top: 25px;
   margin-inline: 6%;
@@ -180,9 +180,9 @@ body {
   right: 40px;
 }
 
-/* end Header Style */
+/* end HEADER STYLES */
 
-/* Modal Style */
+/* MODAL STYLES */
 .modal {
   position: fixed;
   top: 0;
@@ -276,8 +276,8 @@ body {
   padding: 8px 16px;
   height: calc(800px - 54px);
   overflow: auto;
+  /* Tạo scrollbar -> content ko bị tràn */
 }
-/* Tạo scrollbar -> content ko bị tràn */
 
 .modal__body::-webkit-scrollbar {
   width: 4px;
@@ -358,16 +358,16 @@ body {
   opacity: 0.5;
 }
 
-/* end Modal Style */
+/* end MODAL STYLES */
 
-/*Light Gallery */
+/* LIGHT GALLERY */
 .lg-backdrop {
   background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(5px);
 }
-/*end Light Gallery */
+/* end LIGHT GALLERY */
 
-/* Not-Found Style */
+/* NOT-FOUND STYLE */
 .not-found {
   padding-block: 40px;
   display: flex;
@@ -384,9 +384,9 @@ body {
   text-align: center;
   opacity: 0.5;
 }
-/*end Not-Found Style */
+/* end NOT-FOUND STYLE */
 
-/* Loading style */
+/* LOADING STYLE */
 .loading {
   margin: auto;
   display: none;
@@ -430,4 +430,7 @@ body {
     transform: rotate(360deg);
   }
 }
-/*end Loading style */
+/* end LOADING STYLE */
+
+/* REPONSIVE STYLE */
+/* end REPONSIVE STYLE */

@@ -1,4 +1,4 @@
-/* Images Fixed Style */
+/* IMAGES FIXED STYLE */
 .image-fixed {
   position: fixed;
   top: 573px;
@@ -16,9 +16,9 @@
   left: 50%;
   transform: translateX(-50%);
 }
-/* end Images Fixed Style */
+/* end IMAGES FIXED STYLE */
 
-/* Content */
+/* CONTENT */
 
 .content {
   max-width: 664px;
@@ -73,9 +73,9 @@
   flex-shrink: 0;
 }
 
-/* end Content */
+/* end CONTENT */
 
-/* Scammers List */
+/* SCAMMERS LIST */
 .alert-scam {
   margin-top: 111px;
   border-radius: 16px;
@@ -154,9 +154,9 @@
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* end Scammers List */
+/* end SCAMMERS LIST */
 
-/* Warning */
+/* WARNING */
 .warning {
   margin-top: 60px;
 }
@@ -227,4 +227,4 @@
 }
 /* khi active sẽ lật icon */
 
-/* end Warning */
+/* end WARNING */

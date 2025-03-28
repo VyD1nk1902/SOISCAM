@@ -1,4 +1,4 @@
-/* Breadcrumb Styles */
+/* BREADCRUMB STYLE  */
 .breadcrumb {
   margin-inline: 6%;
   margin-top: 16px;
@@ -21,9 +21,9 @@
   pointer-events: none;
   color: var(--TextColor);
 }
-/* end Breadcrumb Styles */
+/* end BREADCRUMB STYLE */
 
-/* Form Report Styles */
+/* FORM REPORT STYLE */
 .form-report {
   max-width: 830px;
   margin-inline: auto;
@@ -176,4 +176,4 @@
   margin-inline: auto;
   display: block;
 }
-/* end Form Report Styles */
+/* end FORM REPORT STYLE */

@@ -1,4 +1,4 @@
-// Header fixed
+//HEADER FIXED
 const header = document.querySelector(".header");
 const headerHeight = header.offsetHeight;
 const marginTopHeader = parseFloat(getComputedStyle(header).marginTop);

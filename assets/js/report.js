@@ -1,4 +1,4 @@
-// VARIABLES
+//VARIABLES
 const apiKey = "314724b374fc04be181b9d3398e6dd88";
 const endpoint = "https://67e0000c7635238f9aac34d6.mockapi.io/scammers";
 const uploadImageInput = document.getElementById("uploadImages");
@@ -8,7 +8,7 @@ const phoneScammerInput = document.getElementById("phoneScammer");
 const bankNumberInput = document.getElementById("bankNumber");
 const phoneSenderInput = document.getElementById("phoneSender");
 const contentReportInput = document.getElementById("contentReport");
-// end VARIABLES
+//end VARIABLES
 
 //HANDLE CONTENT REPORT INPUT
 contentReportInput.addEventListener("input", (e) => {
@@ -28,9 +28,9 @@ function handleInputOnlyNumber(e) {
     e.preventDefault();
   }
 }
-// end HANDLE INPUT ONLY NUMBER
+//end HANDLE INPUT ONLY NUMBER
 
-// HANDLE UPLOAD IMGBB
+//HANDLE UPLOAD IMGBB
 
 async function uploadImgBB(file) {
   const formData = new FormData();
@@ -50,7 +50,7 @@ async function uploadImgBB(file) {
   }
 }
 
-// end HANDLE UPLOAD IMGBB
+//end HANDLE UPLOAD IMGBB
 
 //HANDLE UPLOAD IMG
 uploadImageInput.addEventListener("change", handleUploadImage);
@@ -123,4 +123,4 @@ Validator({
   },
   resetOnSubmit: true,
 });
-// end VALIDATION
+//end VALIDATION
