@@ -6,6 +6,7 @@ const alertScamTitle = document.querySelector(".alert-scam__title");
 const alertScamDesc = document.querySelector(".alert-scam__desc");
 const scammerListWrap = document.querySelector(".scammers__list-wrap");
 const loading = document.querySelector(".loading");
+const formSearch = document.querySelector(".form-search");
 let scammerData = [];
 //end Variables
 
@@ -106,3 +107,11 @@ async function getScammer() {
 }
 getScammer();
 //end  HANDLE GET SCAMMER
+
+//HANDLE SEARCH
+formSearch.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const inputSearch = e.target.querySelector(".form-search__input");
+  window.location.href = `./scammers.html?search=${inputSearch.value}`;
+});
+//end HANDLE SEARCH

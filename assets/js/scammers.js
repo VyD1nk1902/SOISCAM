@@ -3,8 +3,14 @@ const alertScamDesc = document.querySelector(".alert-scam__desc");
 const scammerList = document.querySelector(".scammers__list");
 const loading = document.querySelector(".loading");
 const scammerListWrap = document.querySelector(".scammers__list-wrap");
+const formSearch = document.querySelector(".form-search");
+const inputSearch = document.querySelector(".form-search__input");
+
+const urlParams = new URLSearchParams(window.location.search);
+const query = urlParams.get("search");
 let scammerData = [];
 //end VARIABLES
+console.log(query);
 
 //HANDLE SHOW/CLOSE MODAL
 // Lắng nghe sự kiện click để đóng modal
@@ -33,7 +39,7 @@ function renderScammerAll(data) {
       scammerList.insertAdjacentHTML("afterbegin", renderScammerItemHTML(item));
     });
   } else {
-    scammerListWrap.insertAdjacentHTML("beforeend", renderNotFoundHTML("Chưa có đơn nào được tố cáo"));
+    scammerListWrap.insertAdjacentHTML("beforeend", renderNotFoundHTML("Không có đơn nào!"));
   }
 }
 //end HANDLE RENDER SCAMMER ALL
@@ -47,7 +53,17 @@ async function getScammer() {
       const response = await axios.get(endpoint);
       scammerData = await response.data;
       // Lấy dữ liệu database lưu vô biến scammerData để sử dụng cho hàm khác
-      renderScammerAll(scammerData);
+      if (query) {
+        const filterData = scammerData.filter(
+          (item) =>
+            item.bankNumber.includes(query.trim()) ||
+            item.phoneScammer.includes(query.trim()) ||
+            removeTextNoMark(item.nameScammer).includes(removeTextNoMark(query))
+        );
+        renderScammerAll(filterData);
+      } else {
+        renderScammerAll(scammerData);
+      }
       console.log(response.data);
     } catch (error) {
       loading.classList.remove("active");
@@ -58,3 +74,12 @@ async function getScammer() {
 }
 getScammer();
 //end  HANDLE GET SCAMMER
+
+//HANDLE SEARCH SCAMMER
+inputSearch.value = query;
+formSearch.addEventListener("submit", (e) => {
+  e.preventDefault();
+  urlParams.set("search", inputSearch.value);
+  window.location.search = urlParams.toString();
+});
+//HANDLE SEARCH SCAMMER
