@@ -10,12 +10,11 @@
 .about__heading {
   font-size: 30px;
   font-weight: 800;
+  text-align: center;
   color: transparent;
   background: var(--gradientColor);
   background-clip: text;
   -webkit-background-clip: text;
-  text-align: center;
-  margin-bottom: 16px;
 }
 
 .about__desc-wrap {
@@ -38,3 +37,18 @@
   font-weight: 400;
 }
 /* end ABOUT STYLES */
+
+/* Mobile & Tablet */
+@media only screen and (max-width: 1023px) {
+  .about__wrap {
+    margin-top: var(--headerHeight);
+    padding-top: 52px;
+    height: 100vh;
+    margin-inline: 16px;
+    margin-bottom: 50px;
+  }
+
+  .about__heading {
+    margin-bottom: 30px;
+  }
+}

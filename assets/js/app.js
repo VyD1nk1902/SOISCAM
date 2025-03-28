@@ -8,11 +8,11 @@ let isFixed = false;
 window.addEventListener("scroll", () => {
   if (window.scrollY > totalHeaderHeight && !isFixed) {
     header.classList.add("fixed");
-    document.body.style.paddingTop = `${totalHeaderHeight}px`;
+    document.body.classList.add("active");
     isFixed = true;
   } else if (window.scrollY <= totalHeaderHeight && isFixed) {
     header.classList.remove("fixed");
-    document.body.style.paddingTop = "0px";
+    document.body.classList.remove("active");
     isFixed = false;
   }
 });

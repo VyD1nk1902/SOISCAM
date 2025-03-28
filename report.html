@@ -29,14 +29,16 @@
     <!-- HEADER -->
     <header class="header">
       <a href="index.html" class="header__logo">
-        <img
-          src="./assets/images/logo/logo-soiscam-2.svg"
-          alt="Logo-Soiscam"
-          class="header__logo-img"
-        />
+        <img src="./assets/images/logo/logo-soiscam-2.svg" alt="Logo-Soiscam" class="header__logo-img" />
         <span class="header__logo-name">Soi scam</span>
       </a>
+      <span class="header__open-menu">
+        <img src="./assets/images/icon/open-menu-icon.svg" alt="open-menu-icon" />
+      </span>
       <ul class="header__nav-list">
+        <span class="header__close-menu">
+          <img src="./assets/images/icon/close-menu-icon.svg" alt="close-menu-icon" />
+        </span>
         <li class="header__nav-item">
           <a href="index.html" class="header__nav-link">Trang chủ</a>
         </li>
@@ -46,19 +48,15 @@
         <li class="header__nav-item">
           <a href="about.html" class="header__nav-link">Giới thiệu</a>
         </li>
+        <a href="./report.html" class="btn header__btn">Gửi tố cáo</a>
       </ul>
-      <a href="./report.html" class="btn header__btn">Gửi tố cáo</a>
     </header>
     <!-- end HEADER -->
 
     <!-- BREADCRUMB -->
     <section class="breadcrumb">
       <a href="index.html" class="breadcrumb__link">Trang chủ</a>
-      <img
-        src="./assets/images/icon/arrow_right-2.svg"
-        alt="breadcrumb-icon"
-        class="breadcrumb__icon"
-      />
+      <img src="./assets/images/icon/arrow_right-2.svg" alt="breadcrumb-icon" class="breadcrumb__icon" />
       <a href="report.html" class="breadcrumb__link active">Gửi tố cáo</a>
     </section>
     <!-- end BREADCRUMB -->
@@ -93,24 +91,12 @@
       <div class="form__group-wrap">
         <div class="form__group">
           <label for="bankNumber" class="form__title">Số tài khoản <span>*</span></label>
-          <input
-            type="text"
-            placeholder="Nhập số tài khoản..."
-            name="bankNumber"
-            id="bankNumber"
-            class="form__input"
-          />
+          <input type="text" placeholder="Nhập số tài khoản..." name="bankNumber" id="bankNumber" class="form__input" />
           <p class="form-message"></p>
         </div>
         <div class="form__group">
           <label for="bankName" class="form__title">Ngân hàng <span>*</span></label>
-          <input
-            type="text"
-            placeholder="Nhập tên ngân hàng..."
-            name="bankName"
-            id="bankName"
-            class="form__input"
-          />
+          <input type="text" placeholder="Nhập tên ngân hàng..." name="bankName" id="bankName" class="form__input" />
           <p class="form-message"></p>
         </div>
       </div>
@@ -141,11 +127,7 @@
               multiple
               hidden
             />
-            <img
-              src="./assets/images/icon/Image-icon.svg"
-              alt="upload-icon"
-              class="form__upload-icon"
-            />
+            <img src="./assets/images/icon/Image-icon.svg" alt="upload-icon" class="form__upload-icon" />
             <span class="form__upload-text">Chọn ảnh</span>
           </label>
           <p class="form-message"></p>
@@ -155,13 +137,7 @@
       <div class="form__group-wrap">
         <div class="form__group">
           <label for="nameSender" class="form__title">Họ và tên <span>*</span></label>
-          <input
-            type="text"
-            placeholder="Nhập họ và tên..."
-            name="nameSender"
-            id="nameSender"
-            class="form__input"
-          />
+          <input type="text" placeholder="Nhập họ và tên..." name="nameSender" id="nameSender" class="form__input" />
           <p class="form-message"></p>
         </div>
         <div class="form__group">
@@ -178,24 +154,11 @@
       </div>
       <div class="form__action-group">
         <div class="form__action-item">
-          <input
-            type="radio"
-            name="option"
-            id="option-1"
-            value="Tôi là nạn nhân"
-            class="form__radio-input"
-            checked
-          />
+          <input type="radio" name="option" id="option-1" value="Tôi là nạn nhân" class="form__radio-input" checked />
           <label for="option-1" class="form__title-radio">Tôi là nạn nhân</label>
         </div>
         <div class="form__action-item">
-          <input
-            type="radio"
-            name="option"
-            id="option-2"
-            value="Tôi chỉ đăng hộ"
-            class="form__radio-input"
-          />
+          <input type="radio" name="option" id="option-2" value="Tôi chỉ đăng hộ" class="form__radio-input" />
           <label for="option-2" class="form__title-radio">Tôi chỉ đăng hộ</label>
         </div>
       </div>

@@ -16,7 +16,7 @@
   left: 50%;
   transform: translateX(-50%);
 }
-/* end IMAGES FIXED STYLE */
+/*end IMAGES FIXED STYLE */
 
 /* CONTENT */
 
@@ -24,7 +24,7 @@
   max-width: 664px;
   width: 100%;
   margin-inline: auto;
-  margin-top: 96px;
+  padding-top: 96px;
 }
 
 .content__heading {
@@ -228,3 +228,49 @@
 /* khi active sẽ lật icon */
 
 /* end WARNING */
+
+/* RESPONSIVE STYLE */
+
+/* Mobile & Tablet */
+@media only screen and (max-width: 1023px) {
+  .image-fixed {
+    top: 35%;
+  }
+
+  .content {
+    padding-top: 26px;
+    max-width: 100%;
+  }
+
+  .content__heading {
+    font-size: 26px;
+    font-weight: 900;
+  }
+
+  .content__desc {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  .form-search {
+    margin-top: 16px;
+  }
+
+  .alert-scam {
+    margin-top: 40px;
+  }
+
+  .scammers__list-wrap {
+    padding: 50px 16px;
+  }
+
+  .scammers__list {
+    grid-template-columns: 1fr;
+  }
+
+  .warning {
+    margin-top: 56px;
+  }
+}
+
+/* end RESPONSIVE STYLE */
