@@ -20,7 +20,7 @@
         </a>
         <ul class="sidebar__list">
           <li class="sidebar__item">
-            <a href="./dashboard.html" class="sidebar__link active">
+            <a href="./dashboard.html" class="sidebar__link">
               <span class="sidebar__link-icon">
                 <i class="fa-solid fa-users"></i>
               </span>
@@ -36,7 +36,7 @@
             </a>
           </li>
           <li class="sidebar__item">
-            <a href="./warning.html" class="sidebar__link">
+            <a href="warning.html" class="sidebar__link active">
               <span class="sidebar__link-icon">
                 <i class="fa-solid fa-triangle-exclamation"></i>
               </span>
@@ -59,7 +59,7 @@
       <section class="dashboard">
         <!-- HEADER DASHBOARD -->
         <header class="headerAdmin">
-          <h2 class="headerAdmin__title">Quản lí đơn tố cáo lừa đảo</h2>
+          <h2 class="headerAdmin__title">Quản lí cảnh báo</h2>
           <div class="headerAdmin__info">
             <img src="../assets/images/Avatars/avatar-2.png" alt="admin-avatar" />
             <span class="headerAdmin__name">Admin</span>
@@ -75,9 +75,13 @@
           <!-- DASHBOARD TOP -->
           <div class="dashboard__top">
             <div class="dashboard__top-heading">
-              <h2 class="dashboard__top-title">Danh sách Scammers</h2>
-              <p class="dashboard__top-total">(có 20 đơn tố cáo)</p>
+              <h2 class="dashboard__top-title">Danh sách cảnh báo</h2>
+              <p class="dashboard__top-total">(có 20 cảnh báo)</p>
             </div>
+            <button type="submit" class="btn add-warning-btn">
+              <span><i class="fa-solid fa-plus"></i></span>
+              <span>Thêm cảnh báo</span>
+            </button>
             <form class="form-search form-search__admin">
               <input type="text" class="form-search__input" placeholder="Kiểm tra số tài khoản ngân hàng..." />
               <button type="submit" class="btn form-search__button">
@@ -95,24 +99,15 @@
               <thead class="dashboard-table__header">
                 <tr>
                   <th>ID</th>
-                  <th>Chủ tài khoản</th>
-                  <th>Số tài khoản</th>
-                  <th>Ngân hàng</th>
-                  <th>SĐT Đối tượng</th>
-                  <th>Người gửi đơn</th>
-                  <th>Ngày gửi</th>
-                  <th></th>
+                  <th>Tiêu đề cảnh báo</th>
+                  <th>Nội dung cảnh báo</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>#1</td>
-                  <td>Nguyễn văn A</td>
-                  <td>012345678</td>
-                  <td>MB Bank</td>
-                  <td>0987654321</td>
-                  <td>BaCasso</td>
-                  <td>29/03/2025</td>
+                  <td>Tiêu đề cảnh báo 1</td>
+                  <td>Nội dung cảnh báo 1</td>
                   <td class="table-action">
                     <span class="table-action__icon table-action__view">
                       <i class="fa-solid fa-eye"></i>

@@ -1,6 +1,6 @@
 .container-admin {
   display: flex;
-  gap: 40px;
+  gap: 20px;
   padding: 20px;
 }
 
@@ -37,6 +37,10 @@
   font-size: 18px;
   gap: 12px;
   transition: linear 0.2s;
+}
+
+.sidebar__link.active {
+  color: var(--textColor);
 }
 
 .sidebar__link:hover {
@@ -111,24 +115,27 @@
 /* end DASHBOARD CONTENT */
 
 /* DASHBOARD TABLE STYLE */
+.dashboard-table-wrap {
+  margin-top: 50px;
+}
 
-/* End reset css */
-/* ********************** Table wrap ********************** */
+.dashboard-table__header {
+  background-color: var(--bgColor3);
+}
+
 .table-wrap {
   font-size: 14px;
 }
 
-/* ********************** End table wrap ********************** */
-/* ********************** Table common ********************** */
-table {
+.dashboard-table {
   width: 100%;
   overflow: hidden;
-  border-radius: 4px;
+  border-spacing: 0;
+  border-radius: 16px;
 }
 
 table thead th {
   text-align: left;
-  padding-block: 8px;
 }
 
 table th,
@@ -139,4 +146,22 @@ table td {
   vertical-align: middle;
 }
 
+.table-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.table-action__icon {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.table-action__remove {
+  color: var(--redColor);
+}
 /* end DASHBOARD TABLE STYLE */
+
+.add-warning-btn {
+  margin-left: 50px;
+}
