@@ -53,8 +53,10 @@ async function getScammer() {
       const response = await axios.get(endpoint);
       scammerData = await response.data;
       // Lấy dữ liệu database lưu vô biến scammerData để sử dụng cho hàm khác
+      const approveScammerData = scammerData.filter((item) => item.approve === true);
+      // Lấy ScammerData lọc qa mục approve để kiểm duyệt đơn trên trang admin
       if (query) {
-        const filterData = scammerData.filter(
+        const filterData = approveScammerData.filter(
           (item) =>
             item.bankNumber.includes(query.trim()) ||
             item.phoneScammer.includes(query.trim()) ||
@@ -62,7 +64,7 @@ async function getScammer() {
         );
         renderScammerAll(filterData);
       } else {
-        renderScammerAll(scammerData);
+        renderScammerAll(approveScammerData);
       }
       console.log(response.data);
     } catch (error) {

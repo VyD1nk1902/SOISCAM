@@ -96,7 +96,9 @@ async function getScammer() {
       const response = await axios.get(endpoint);
       scammerData = await response.data;
       // Lấy dữ liệu database lưu vô biến scammerData để sử dụng cho hàm khác
-      renderScammerToday(scammerData);
+      const approveScammerData = scammerData.filter((item) => item.approve === true);
+      // Lấy ScammerData lọc qa mục approve để kiểm duyệt đơn trên trang admin
+      renderScammerToday(approveScammerData);
       console.log(response.data);
     } catch (error) {
       loading.classList.remove("active");
