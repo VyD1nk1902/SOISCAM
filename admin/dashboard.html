@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soi Scam Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="./css/admin.css" />
+    <link rel="stylesheet" href="./css/dashboard.css" />
+  </head>
+  <body>
+    <div class="container-admin">
+      <!-- SIDEBAR -->
+      <section class="sidebar">
+        <a href="#" class="sidebar__logo">
+          <img src="../assets/images/logo/logo-soiscam.png" alt="logo-soiscam" />
+          Soi scam
+        </a>
+        <ul class="sidebar__list">
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <span class="sidebar__link-icon">
+                <i class="fa-solid fa-users"></i>
+              </span>
+              Danh sách Scammer
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <span class="sidebar__link-icon">
+                <i class="fa-solid fa-hourglass-half"></i>
+              </span>
+              Đợi duyệt
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <span class="sidebar__link-icon">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+              </span>
+              Nội dung cảnh báo
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <span class="sidebar__link-icon">
+                <i class="fa-solid fa-globe"></i>
+              </span>
+              Vào Website
+            </a>
+          </li>
+        </ul>
+      </section>
+      <!-- end SIDEBAR -->
+
+      <!-- DASHBOARD -->
+      <section class="dashboard">
+        <!-- HEADER DASHBOARD -->
+        <header class="headerAdmin">
+          <h2 class="headerAdmin__title">Quản lí đơn tố cáo lừa đảo</h2>
+          <div class="headerAdmin__info">
+            <img src="../assets/images/Avatars/avatar-2.png" alt="admin-avatar" />
+            <span class="headerAdmin__name">Admin</span>
+            <span class="headerAdmin__icon">
+              <i class="fa-solid fa-angle-down"></i>
+            </span>
+          </div>
+        </header>
+        <!-- end HEADER DASHBOARD -->
+
+        <!-- DASHBOARD CONTENT -->
+        <div class="dashboard-content">
+          <!-- DASHBOARD TOP -->
+          <div class="dashboard__top">
+            <div class="dashboard__top-heading">
+              <h2 class="dashboard__top-title">Danh sách Scammers</h2>
+              <p class="dashboard__top-total">(có 20 đơn tố cáo)</p>
+            </div>
+            <form class="form-search form-search__admin">
+              <input type="text" class="form-search__input" placeholder="Kiểm tra số tài khoản ngân hàng..." />
+              <button type="submit" class="btn form-search__button">
+                <img src="../assets/images/icon/search-icon.svg" alt="search-icon" />
+                <span>Tìm kiếm</span>
+              </button>
+            </form>
+          </div>
+          <!-- end DASHBOARD TOP -->
+
+          <!-- DASHBOARD TABLE -->
+
+          <div class="fui-table-ui-basic-linh table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Chủ tài khoản</th>
+                  <th>Số tài khoản</th>
+                  <th>Ngân hàng</th>
+                  <th>SĐT Đối tượng</th>
+                  <th>Người gửi đơn</th>
+                  <th>Ngày gửi</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#1</td>
+                  <td>Nguyễn văn A</td>
+                  <td>012345678</td>
+                  <td>MB Bank</td>
+                  <td>0987654321</td>
+                  <td>BaCasso</td>
+                  <td>29/03/2025</td>
+                  <td class="table-action">
+                    <span class="action-icon">
+                      <i class="fa-solid fa-eye"></i>
+                    </span>
+                    <span class="action-icon">
+                      <i class="fa-solid fa-trash"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#1</td>
+                  <td>Nguyễn văn A</td>
+                  <td>012345678</td>
+                  <td>MB Bank</td>
+                  <td>0987654321</td>
+                  <td>BaCasso</td>
+                  <td>29/03/2025</td>
+                  <td class="table-action">
+                    <span class="action-icon">
+                      <i class="fa-solid fa-eye"></i>
+                    </span>
+                    <span class="action-icon">
+                      <i class="fa-solid fa-trash"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#1</td>
+                  <td>Nguyễn văn A</td>
+                  <td>012345678</td>
+                  <td>MB Bank</td>
+                  <td>0987654321</td>
+                  <td>BaCasso</td>
+                  <td>29/03/2025</td>
+                  <td class="table-action">
+                    <span class="action-icon">
+                      <i class="fa-solid fa-eye"></i>
+                    </span>
+                    <span class="action-icon">
+                      <i class="fa-solid fa-trash"></i>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- end DASHBOARD TABLE -->
+        </div>
+        <!-- DASHBOARD CONTENT -->
+      </section>
+      <!-- end DASHBOARD -->
+    </div>
+  </body>
+</html>

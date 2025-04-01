@@ -43,40 +43,6 @@
   text-align: center;
 }
 
-.form-search {
-  max-width: 500px;
-  width: 100%;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: 48px;
-  background-color: var(--bgColor3);
-  display: flex;
-  padding: 5px 5px 5px 24px;
-  align-items: center;
-  margin-inline: auto;
-  gap: 24px;
-}
-
-.form-search__custom {
-  margin-top: 60px;
-}
-
-.form-search__input {
-  flex: 1;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  color: var(--colorText);
-}
-
-.form-search__button {
-  flex-shrink: 0;
-}
-
-.form-search__button img {
-  display: none;
-}
-
 /* end CONTENT */
 
 /* SCAMMERS LIST */
@@ -255,10 +221,6 @@
     margin-top: 8px;
   }
 
-  .form-search {
-    margin-top: 16px;
-  }
-
   .alert-scam {
     margin-top: 40px;
   }
@@ -273,21 +235,6 @@
 
   .warning {
     margin-top: 56px;
-  }
-}
-
-/* Mobile */
-@media only screen and (max-width: 739px) {
-  .form-search__button img {
-    display: block;
-  }
-
-  .form-search__button span {
-    display: none;
-  }
-
-  .form-search {
-    max-width: 100%;
   }
 }
 
