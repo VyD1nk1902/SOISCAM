@@ -73,6 +73,10 @@
   flex-shrink: 0;
 }
 
+.form-search__button img {
+  display: none;
+}
+
 /* end CONTENT */
 
 /* SCAMMERS LIST */
@@ -212,7 +216,7 @@
   /* display: none; * */
   height: 0;
   overflow: hidden;
-  transition: ease 0.2s;
+  transition: linear 0.2s;
 }
 
 .warning__content.active {
@@ -223,7 +227,7 @@
 
 .warning__header-icon.active {
   transform: rotate(90deg);
-  transition: transform ease 0.2s;
+  transition: transform linear 0.2s;
 }
 /* khi active sẽ lật icon */
 
@@ -233,13 +237,12 @@
 
 /* Mobile & Tablet */
 @media only screen and (max-width: 1023px) {
+  .content {
+    padding-top: 0;
+    max-width: 100%;
+  }
   .image-fixed {
     top: 35%;
-  }
-
-  .content {
-    padding-top: 26px;
-    max-width: 100%;
   }
 
   .content__heading {
@@ -270,6 +273,32 @@
 
   .warning {
     margin-top: 56px;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 739px) {
+  .form-search__button img {
+    display: block;
+  }
+
+  .form-search__button span {
+    display: none;
+  }
+
+  .form-search {
+    max-width: 100%;
+  }
+}
+
+/* Tablet */
+@media only screen and (min-width: 740px) and (max-width: 1023px) {
+  .content {
+    max-width: 500px;
+  }
+
+  .scammers__list {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
