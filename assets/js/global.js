@@ -49,15 +49,15 @@ function renderModalHTML(itemData) {
                </div>
                <div class="modal__detail">
                  <span class="modal__detail-title">Số điện thoại</span>
-                 <span class="modal__detail-text">${itemData.phoneScammer}</span>
+                 <span class="modal__detail-text text-single">${itemData.phoneScammer}</span>
                </div>
                <div class="modal__detail">
                  <span class="modal__detail-title">Số tài khoản</span>
-                 <span class="modal__detail-text">${itemData.bankNumber}</span>
+                 <span class="modal__detail-text text-single">${itemData.bankNumber}</span>
                </div>
                <div class="modal__detail">
                  <span class="modal__detail-title">Ngân hàng</span>
-                 <span class="modal__detail-text">${itemData.bankName}</span>
+                 <span class="modal__detail-text text-single">${itemData.bankName}</span>
                </div>
              </div>
              <div class="modal__group">
@@ -72,11 +72,11 @@ function renderModalHTML(itemData) {
                </div>
                <div class="modal__detail">
                  <span class="modal__detail-title">Trạng thái</span>
-                 <span class="modal__detail-text">${itemData.option}</span>
+                 <span class="modal__detail-text text-single">${itemData.option}</span>
                </div>
                <div class="modal__detail">
                  <span class="modal__detail-title">Liên hệ</span>
-                 <span class="modal__detail-text">${itemData.phoneSender}</span>
+                 <span class="modal__detail-text text-single">${itemData.phoneSender}</span>
                </div>
                <div class="modal__textarea">
                  <span class="modal__detail-title">Nội dung tố cáo</span>
@@ -119,7 +119,7 @@ function renderScammerItemHTML(itemData) {
       <li class="scammers__item" data-id = "${itemData.id}" >
       <img src="./assets/images/Avatars/avatar-1.png" alt="avatar" class="scammer__avatar" />
       <div class="scammer__info">
-        <h3 class="scammer__name">${itemData.nameScammer}</h3>
+        <h3 class="scammer__name text-single">${itemData.nameScammer}</h3>
         <div class="scammer__date">${itemData.id} - ${formatDate(itemData.date)}</div>  
       </div>
       </li> 
