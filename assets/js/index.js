@@ -103,7 +103,7 @@ async function getScammer() {
       console.error(error);
       scammerListWrap.insertAdjacentHTML("beforeend", renderNotFoundHTML("Dữ liệu bị lỗi, vui lòng thử lại sau!"));
     }
-  }, 2000);
+  }, 1000);
 }
 getScammer();
 //end  HANDLE GET SCAMMER
