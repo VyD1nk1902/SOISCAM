@@ -8,7 +8,7 @@ const dashboardTableWrap = document.querySelector(".dashboard-table-wrap");
 // HANDLE RENDER SCAMMER PENDING
 function handleRenderScammerApprove(item) {
   const tableBodyItemHTML = `
-    <tr class="dashboard__table-bodyItem">
+    <tr class="dashboard__table-bodyItem" data-id="${item.id}" >
         <td>#${item.id}</td>
         <td>${item.nameScammer}</td>
         <td>${item.bankNumber}</td>
@@ -34,7 +34,7 @@ function handleRenderScammerApprove(item) {
 async function handleGetScammerApprove() {
   try {
     const response = await axios.get(endpoint);
-    const scammerData = await response.data;
+    scammerData = await response.data;
     const pendingScammerData = scammerData.filter((item) => item.approve === false);
     dashboardTopTotal.textContent = `(có ${pendingScammerData.length} đơn tố cáo đợi duyệt)`;
     if (pendingScammerData?.length > 0) {
@@ -49,3 +49,15 @@ async function handleGetScammerApprove() {
 }
 handleGetScammerApprove();
 // end HANDLE GET SCAMMER PENDING
+
+// HANDLE VIEW SCAMMER
+document.body.addEventListener("click", (e) => {
+  const modal = e.target.closest(".modal");
+  if (e.target.matches(".table-action__view")) {
+    const scammerItem = e.target.closest(".dashboard__table-bodyItem");
+    handleShowModal(scammerItem.dataset.id);
+  } else if (e.target.matches(".modal__header-close") || e.target.matches(".modal__overlay")) {
+    modal.remove();
+  }
+});
+// end HANDLE VIEW SCAMMER
