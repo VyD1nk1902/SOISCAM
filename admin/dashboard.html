@@ -4,7 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Soi Scam Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/css/lightgallery.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/css/lg-thumbnail.min.css" />
     <link rel="stylesheet" href="../assets/css/reset.css" />
     <link rel="stylesheet" href="../assets/css/base.css" />
     <link rel="stylesheet" href="./css/admin.css" />
@@ -76,7 +84,7 @@
           <div class="dashboard__top">
             <div class="dashboard__top-heading">
               <h2 class="dashboard__top-title">Danh sách Scammers</h2>
-              <p class="dashboard__top-total">(có 20 đơn tố cáo)</p>
+              <p class="dashboard__top-total">(có 0 đơn tố cáo)</p>
             </div>
             <form class="form-search form-search__admin">
               <input type="text" class="form-search__input" placeholder="Kiểm tra số tài khoản ngân hàng..." />
@@ -104,25 +112,7 @@
                   <th></th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>#1</td>
-                  <td>Nguyễn văn A</td>
-                  <td>012345678</td>
-                  <td>MB Bank</td>
-                  <td>0987654321</td>
-                  <td>BaCasso</td>
-                  <td>29/03/2025</td>
-                  <td class="table-action">
-                    <span class="table-action__icon table-action__view">
-                      <i class="fa-solid fa-eye"></i>
-                    </span>
-                    <span class="table-action__icon table-action__remove">
-                      <i class="fa-solid fa-trash"></i>
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
+              <tbody class="dashboard__table-body"></tbody>
             </table>
           </div>
           <!-- end DASHBOARD TABLE -->
@@ -131,5 +121,15 @@
       </section>
       <!-- end DASHBOARD -->
     </div>
+
+    <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <!-- Lightgallery ZoomPics -->
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <!-- API -->
+    <script src="../assets/js/global.js"></script>
+    <script src="./js/dashboard.js"></script>
+    <!-- end JS -->
   </body>
 </html>
