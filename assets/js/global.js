@@ -128,10 +128,10 @@ function renderScammerItemHTML(itemData) {
 //end RENDER SCAMMER ITEM HTML
 
 //RENDER NOT FOUND HTML
-function renderNotFoundHTML(message = "Không có dữ liệu") {
+function renderNotFoundHTML(message = "Không có dữ liệu", admin = false) {
   return `
     <div class="not-found">
-      <img src="./assets/images/logo/not-found.svg" alt="not-found" />
+      <img src="${admin === false ? "./assets/images/logo/not-found.svg" : "../assets/images/logo/not-found.svg"}" />
       <span>${message}</span>
     </div>
     `;
