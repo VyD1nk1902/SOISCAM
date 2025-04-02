@@ -32,14 +32,16 @@ function renderModalHTML(itemData) {
            <div class="modal__header">
              <div class="modal__header-title">Chi tiết tố cáo</div>
              <div class="modal__header-close">
-               <img src="./assets/images/icon/close-icon.svg" alt="close icon" />
+              <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.837891 8.90333C0.392578 9.34083 0.376953 10.1611 0.853516 10.6377C1.32227 11.1065 2.14258 11.0908 2.58008 10.6455L5.99414 7.23926L9.39258 10.6455C9.85352 11.0986 10.6582 11.1065 11.127 10.6299C11.6035 10.1533 11.5957 9.35645 11.1426 8.89551L7.73633 5.49708L11.1426 2.09083C11.5957 1.62989 11.6035 0.833014 11.127 0.356451C10.6582 -0.120111 9.85352 -0.112299 9.39258 0.340826L5.99414 3.74708L2.58008 0.340826C2.14258 -0.104486 1.32227 -0.120111 0.853516 0.356451C0.376953 0.825202 0.392578 1.64551 0.837891 2.08301L4.24414 5.49708L0.837891 8.90333Z" fill="#CCCCCC"/>
+              </svg>
              </div>
            </div>
            <div class="modal__body">
              <div class="modal__group">
                <div class="modal__profile">
                  <div class="modal__profile-avatar">
-                   <img src="./assets/images/Avatars/avatar-1.png" alt="avatar-scammer" />
+                   <img src="https://i.ibb.co/HLYDdhBd/avatar-1.png" alt="avatar-scammer" />
                  </div>
                  <div class="modal__info">
                    <h4 class="modal__info-name">${itemData.nameScammer}</h4>
@@ -63,7 +65,7 @@ function renderModalHTML(itemData) {
              <div class="modal__group">
                <div class="modal__profile">
                  <div class="modal__profile-avatar">
-                   <img src="./assets/images/Avatars/avatar-2.png" alt="avatar" />
+                   <img src="https://i.ibb.co/67tXWcwb/avatar-2.png" alt="avatar" />
                  </div>
                  <div class="modal__info">
                    <h4 class="modal__info-name">${itemData.nameSender}</h4>
